@@ -1,0 +1,8 @@
+.vscode
+.idea
+.DS_Store
+
+token.ts
+
+node_modules
+dist
