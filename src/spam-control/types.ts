@@ -1,5 +1,4 @@
-export interface User {
-  id: number
+export interface UserData {
   lastMessageTime: number
   lastDelayWarningTime: number
 }

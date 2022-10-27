@@ -1,12 +1,16 @@
 import { Telegraf } from 'telegraf'
 
-import { spamControlMiddleware } from '@/spam-control'
+import { t, registerI18nHandlers } from '@/i18n'
+
+import { globalMiddleware } from './global.middleware'
 
 export const setBot = (bot: Telegraf) => {
-  bot.use(spamControlMiddleware)
+  bot.use(globalMiddleware)
+
+  registerI18nHandlers(bot)
 
   bot.start(ctx => {
-    ctx.reply('Ответ на /start')
+    ctx.reply(t('HELLO', ctx.from.id))
   })
 
   bot.launch().then()
