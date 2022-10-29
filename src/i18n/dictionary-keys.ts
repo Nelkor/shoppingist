@@ -10,6 +10,13 @@ export const translationKeys = [
   'LANGUAGE_CHANGED',
   'LANGUAGE_CONTINUE',
 
-  // /start
+  // Lists
+  'LISTS_ENTRY',
+  'LISTS_ENTRY_EMPTY',
+  'LISTS_ENTRY_FULL',
+  'LISTS_CREATE',
+  'LISTS_NAME_OF_NEW',
+
+  // Start
   'HELLO',
 ] as const

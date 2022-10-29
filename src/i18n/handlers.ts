@@ -1,5 +1,7 @@
 import { Telegraf, Markup, Context } from 'telegraf'
 
+import { removeInlineKeyboard } from '@/general'
+
 import {
   DEFAULT_LANGUAGE,
   LANG_CANCEL_ACTION,
@@ -20,7 +22,7 @@ const createLangChangeHandler = (lang?: Language) => (ctx: Context) => {
   }
 
   Promise.all([
-    ctx.editMessageReplyMarkup(Markup.inlineKeyboard([]).reply_markup),
+    removeInlineKeyboard(ctx),
     ctx.reply(t(lang ? 'LANGUAGE_CHANGED' : 'LANGUAGE_CONTINUE', ctx.from.id)),
   ]).then(() => ctx.answerCbQuery())
 }
