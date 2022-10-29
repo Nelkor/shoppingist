@@ -1,12 +1,12 @@
-import { users } from './users'
+import { usersData } from './store'
 import { PERIOD_TO_DELETE, CLEANER_INTERVAL } from './constants'
 
 const clearInactiveUsers = () => {
   const now = Date.now()
 
-  users.forEach((user, id) => {
+  usersData.forEach((user, id) => {
     if (now - user.lastMessageTime > PERIOD_TO_DELETE) {
-      users.delete(id)
+      usersData.delete(id)
     }
   })
 }
